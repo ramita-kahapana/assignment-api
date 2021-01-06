@@ -7,8 +7,8 @@ class Student extends Model {
     static get primaryKey() {
         return 'student_id'
     }
-    univercites() {
-        return this.belongsToMany('App/Models/Univercity')
+    universites() {
+        return this.belongsToMany('App/Models/University')
     }
 }
 
