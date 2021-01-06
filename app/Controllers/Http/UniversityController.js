@@ -9,11 +9,7 @@ class UniversityController {
     }
     async show({ request }) {
         const { id } = request.params
-        const university = await Database
-            .select('*')
-            .from('universities')
-            .where("university_id", id)
-            .first()
+        const university = await University.query().where('universicy_id',id).fetch()
 
         return { status: 200, error: undefined, data: university || {} }
     }

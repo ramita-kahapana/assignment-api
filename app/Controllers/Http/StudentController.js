@@ -9,12 +9,7 @@ class StudentController {
     }
     async show({request}) {
         const id = request.params
-        const student = await Database
-            .select('*')
-            .from('students')
-            .where('student_id', id)
-            .innerJoin('universities', 'students.university_id', 'universities.university_id')
-            .first()
+        const student = await Student.query().where('student_id',id).fetch()
         return { status: 200, error: undefined, data: student || {} }
     }
     async store({ request }) {
