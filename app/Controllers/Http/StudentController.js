@@ -7,8 +7,8 @@ class StudentController {
         const students = await Student.query().fetch()
         return { status: 200, error: undefined, data: students }
     }
-    async show() {
-        const id = params
+    async show({request}) {
+        const id = request.params
         const student = await Database
             .select('*')
             .from('students')
