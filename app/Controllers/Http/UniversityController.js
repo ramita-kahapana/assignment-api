@@ -21,21 +21,12 @@ class UniversityController {
     }
 
     async update({ request }) {
-        const { body, params } = request
-        const { id } = params
-        const { university_name } = body
+        const { id } = request.params
+        const data = request.body
+        const universityId = await University.query().where('university_id',id ).update(data)
+        const universityData = await University.query().where('university_id',id).fetch()
+        return { status: 200, error: undefined, data: universityData }
 
-        const universityId = await Database
-            .table('universities')
-            .where({ university_id: id })
-            .update({ university_name })
-
-        const universitys = await Database
-            .table('universities')
-            .where({ university_id: universityId })
-            .first()
-
-        return { status: 200, error: undefined, data: universitys }
     }
     async destroy({ request }) {
         const { id } = request.params
