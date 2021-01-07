@@ -1,6 +1,6 @@
 # EXAMPLE DATA OF STUDENT AND UNIVERSITY
 
-# DATABASE
+## DATABASE
 Use database is postgresql 
 * install postgres or npm
 ```
@@ -8,16 +8,16 @@ npm i pg
 ```
 
 ## CRUD
-### University
+## University
 ### CREATE
 
-### REQUEST 
+#### REQUEST 
 
 ```
 medthod: POST http://localhost:3333/api/:version/universities
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -31,9 +31,9 @@ medthod: POST http://localhost:3333/api/:version/universities
 }
 ```
 
-### READ
+#### READ
 
-### REQUEST
+#### REQUEST
 
 Get all from univesity
 
@@ -41,7 +41,7 @@ Get all from univesity
 medthod: GET http://localhost:3333/api/:version/universities
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -68,7 +68,7 @@ medthod: GET http://localhost:3333/api/:version/universities
     ]
 }
 ```
-### REQUEST
+#### REQUEST
 
 Get id from univesity and link foreing key from student
 
@@ -76,7 +76,7 @@ Get id from univesity and link foreing key from student
 medthod: GET http://localhost:3333/api/:version/universities/3
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -130,8 +130,8 @@ medthod: GET http://localhost:3333/api/:version/universities/3
 }
 ```
 
-### UPDATE
-### REQUEST
+#### UPDATE
+#### REQUEST
 
 Select id from univesity to update row of id  
 
@@ -139,7 +139,7 @@ Select id from univesity to update row of id
 medthod: PUT http://localhost:3333/api/:version/universities/3
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -162,8 +162,8 @@ medthod: PUT http://localhost:3333/api/:version/universities/3
   > After
 ![](images/Afteruniversity.png)
 
-### DELETE
-### REQUEST
+#### DELETE
+#### REQUEST
 
 Select id from univesity to delete row of id   
 
@@ -171,7 +171,7 @@ Select id from univesity to delete row of id
 medthod: DELETE http://localhost:3333/api/:version/universities/3
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -188,16 +188,16 @@ medthod: DELETE http://localhost:3333/api/:version/universities/3
   > After
 ![](images/Deleteuniversity.png)
 
-### STUDENT
-### CREATE
+## STUDENT
+#### CREATE
 
-### REQUEST 
+#### REQUEST 
 
 ```
 medthod: POST http://localhost:3333/api/:version/students
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -213,9 +213,9 @@ medthod: POST http://localhost:3333/api/:version/students
 }
 ```
 
-### READ
+#### READ
 
-### REQUEST
+#### REQUEST
 
 Get all from student
 
@@ -223,7 +223,7 @@ Get all from student
 medthod: GET http://localhost:3333/api/:version/students
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -257,7 +257,7 @@ medthod: GET http://localhost:3333/api/:version/students
 }
 
 ```
-### REQUEST
+#### REQUEST
 
 Get id from student and link foreing key from university
 
@@ -265,7 +265,7 @@ Get id from student and link foreing key from university
 medthod: GET http://localhost:3333/api/:version/ustudents/3
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -295,8 +295,8 @@ medthod: GET http://localhost:3333/api/:version/ustudents/3
 }
 ```
 
-### UPDATE
-### REQUEST
+#### UPDATE
+#### REQUEST
 
 Select id from student to update row of id  
 
@@ -304,7 +304,7 @@ Select id from student to update row of id
 medthod: PUT http://localhost:3333/api/:version/students/1
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
@@ -325,8 +325,8 @@ medthod: PUT http://localhost:3333/api/:version/students/1
 * Image of Update
   > After
 ![](images/Afterstudent.png)
-### DELETE
-### REQUEST
+#### DELETE
+#### REQUEST
 
 Select id from student to delete row of id   
 
@@ -334,7 +334,7 @@ Select id from student to delete row of id
 medthod: DELETE http://localhost:3333/api/:version/students/3
 ```
 
-### RENDERED
+#### RENDERED
 
 ```
 {
