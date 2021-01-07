@@ -8,7 +8,7 @@ class University extends Model {
         return 'university_id'
     }
     students() {
-        return this.hasMany('App/Models/Student')
+        return this.belongsToMany('App/Models/Student').pivotTable('university_students')
     }
 }
 

@@ -7,9 +7,10 @@ class Student extends Model {
     static get primaryKey() {
         return 'student_id'
     }
-    universites() {
-        return this.belongsToMany('App/Models/University')
+    university() {
+        return this.belongsToMany('App/Models/University').pivotTable('university_students')
     }
+   
 }
 
 module.exports = Student

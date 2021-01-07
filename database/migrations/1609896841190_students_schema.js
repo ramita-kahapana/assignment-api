@@ -10,11 +10,6 @@ class StudentsSchema extends Schema {
       table.string("first_name").notNullable()
       table.string("last_name").notNullable()
       table.string("student_class").notNullable()
-      table.integer("university_id").unsigned()
-      table.foreign("university_id")
-        .references('universities.university_id')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE')
       table.timestamps()
     })
   }
