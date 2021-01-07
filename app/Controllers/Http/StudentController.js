@@ -1,22 +1,31 @@
 'use strict'
+
+const UniversityStudent = use("App/Models/UniversityStudent")
 const Database = use('Database')
 const Student = use("App/Models/Student")
+const University = use("App/Models/University")
 
 class StudentController {
     async index() {
         const students = await Student.query().fetch()
         return { status: 200, error: undefined, data: students }
     }
-    async show({request}) {
-        const {id} = request.params
-        const student = await Student.query().where({student_id:id}).fetch()
-        return { status: 200, error: undefined, data: student  }
+    async show({ request }) {
+        const { id } = request.params
+        const data = await Student.query().with('university').where({ student_id: id }).fetch()
+
+        return { status: 200, error: undefined, data: data }
     }
     async store({ request }) {
-        const data = request.body
+        const { body } = request
+        const { first_name, last_name, student_class, university_name } = body
+        const student = await Student.create({ first_name, last_name, student_class })
+        const university = await University.query().where({ university_name }).fetch().then(response => JSON.parse(JSON.stringify(response)))
+        const testData = university.map(item => item.id)
+        let testId = await Student.query().count('student_id as id').then(response => JSON.parse(JSON.stringify(response[0])))
+        const universitystudent = await UniversityStudent.create({ student_id: testId.id, university_id: testData[0] })
 
-        const students = await Student.create(data)
-        return { status: 200, error: undefined, data: students }
+        return { status: 200, error: undefined, data: student }
     }
     async update({ request }) {
         const { body, params } = request
