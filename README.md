@@ -13,6 +13,8 @@ npm i pg
 
 #### REQUEST 
 
+Add university to table and add row
+
 ```
 medthod: POST http://localhost:3333/api/:version/universities
 ```
@@ -192,6 +194,8 @@ medthod: DELETE http://localhost:3333/api/:version/universities/3
 #### CREATE
 
 #### REQUEST 
+
+Add student to table and add row
 
 ```
 medthod: POST http://localhost:3333/api/:version/students
