@@ -13,7 +13,7 @@ npm i pg
 
 #### REQUEST 
 
-Add university to table and add row
+Add university to table and add row 
 
 ```
 medthod: POST http://localhost:3333/api/:version/universities
