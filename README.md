@@ -1,14 +1,74 @@
 # EXAMPLE DATA OF STUDENT AND UNIVERSITY
 
-## DATABASE
+## About The Project
+The project built to Storing information of university and student  
+
+Core features:
+* Storing  data from student input and university 
+* Show data of student and university  
+* Update data of student and university
+* Delete data of student and university 
+
+
+
+
+## Getting Started
+The current configuration for Docker or docker-compose requires your machine to build database manually.
+### Prerequisites
+Please install the following:
+​
+- AdonisJs
+- Docker
+- PostgreSql (Database)
+
+### Run the application
+
+Build Adonis
+```bash
+$ npm i -g @adonisjs/cli
+```
+
+Create a new application
+```bash
+$ adonis new (project name )
+```
+Run serve of adonisjs
+```bash
+$ adonis serve --dev
+```
+
+Make migration to create teble  
+```bash
+$ adonis make:migration (table name of HTTP )
+```
+
+Make models to link relation 
+
+```bash
+$ adonis make:model (model name) 
+```
+
+Make controller to make funtion CRUD
+
+```bash
+$ adonis make:controller (controller name) 
+```
+
+Run with Docker
+```bash
+$ docker-compose up
+```
+
+### DATABASE
 Use database is postgresql 
 * install postgres or npm
 ```
 npm i pg 
 ```
 
-## CRUD
-## University
+## Examples of how a project can be used
+### CRUD
+### University
 ### CREATE
 
 #### REQUEST 
@@ -354,3 +414,4 @@ medthod: DELETE http://localhost:3333/api/:version/students/3
 * Image of Delete 
   > After
 ![](images/Deltestudent.png)
+
