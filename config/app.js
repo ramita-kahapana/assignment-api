@@ -17,6 +17,9 @@ module.exports = {
   */
 
   name: Env.get('APP_NAME', 'AdonisJs'),
+  http: {
+    loggerEnv: ['development', 'production']
+  },
 
   /*
   |--------------------------------------------------------------------------
