@@ -4,6 +4,7 @@ const UniversityStudent = use("App/Models/UniversityStudent")
 const Database = use('Database')
 const Student = use("App/Models/Student")
 const University = use("App/Models/University")
+const StudentValidator = require("../../../service/StudentValidator")
 
 class StudentController {
     async index() {
@@ -23,6 +24,9 @@ class StudentController {
         const testData = university.map(item => item.university_id)
         let testId = await Student.query().count('student_id as id').then(response => JSON.parse(JSON.stringify(response[0])))
         const universitystudent = await UniversityStudent.create({ student_id: testId.id, university_id: testData[0] })
+        const validatedData = await StudentValidator(request.body)
+        if (validatedData.error)
+            return { status: 422, error: validatedData.error, data: undefined }
 
         return { status: 200, error: undefined, data: student }
     }
