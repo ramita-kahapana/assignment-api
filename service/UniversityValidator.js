@@ -1,7 +1,7 @@
 const Validator = use('Validator')
-module.exports = async function universityValidator(data) {
+module.exports = async function UniversityValidator(data) {
     if (typeof data !== 'object') throw new Error()
-    const { first_name, last_name, age, admin_name, password, status } = data
+    const {university_name } = data
     const rules = {
         university_name: 'required',
     }
