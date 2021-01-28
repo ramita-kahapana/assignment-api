@@ -16,19 +16,20 @@ class UniversityController {
     }
     async store({ request }) {
         const data = request.body
-
-        const universities = await University.create(data)
         const validatedData = await UniversityValidator(request.body)
         if (validatedData.error)
             return { status: 422, error: validatedData.error, data: undefined }
+        const universities = await University.create(data)
+       
+
         return { status: 200, error: undefined, data: universities }
     }
 
     async update({ request }) {
         const { id } = request.params
         const data = request.body
-        const universityId = await University.query().where('university_id',id ).update(data)
-        const universityData = await University.query().where('university_id',id).fetch()
+        const universityId = await University.query().where('university_id', id).update(data)
+        const universityData = await University.query().where('university_id', id).fetch()
         return { status: 200, error: undefined, data: universityData }
 
     }
