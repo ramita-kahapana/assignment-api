@@ -21,12 +21,3 @@ test('should return error unidefined when data is not entered from student valid
   })
   assert.isArray(studentData.error, undefined)
 })
-test("should return error with incorrect data that required from Student validator", async ({ assert }) => {
-  const studentData = {
-    first_name: '',
-    last_name: 'kahapana',
-    student_class: 'sss',
-  };
-  const Student = await StudentValidator(studentData);
-  assert.isOk(Student.error, 'Student error');
-});
